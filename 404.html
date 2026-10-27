@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Justin Park</title>
+<meta name="robots" content="noindex">
+<script>
+  // Apply the saved theme before first paint (no flash).
+  try { var t = localStorage.getItem('jp-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg?v=5" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png?v=5" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=5">
+<link rel="stylesheet" href="styles.css">
+<script src="seal-logo.js" defer></script>
+<style>
+  html[data-theme="dark"] { --ghost: #4E4E4E; }
+  html[data-theme="light"] { --ghost: #D3CDC0; }
+  body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+  .site-header { background: transparent; }
+  .nf {
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;
+    padding: 0 var(--gutter) calc(var(--header-h) * .9); text-align: center;
+  }
+  .nf-code {
+    margin: 0 0 18px; font-family: var(--font-body); font-weight: 400; font-size: clamp(76px, 9vw, 112px);
+    line-height: 1; letter-spacing: .02em; color: var(--ghost); user-select: none;
+  }
+  .nf-code span { display: inline-block; }
+  .nf-code span:nth-child(2) { transform-origin: 50% 55%; }
+  .nf-code:hover span:nth-child(2) { animation: nfWobble 1s cubic-bezier(.36,.07,.19,.97); }
+  @keyframes nfWobble { 20% { transform: rotate(-14deg); } 45% { transform: rotate(10deg); } 70% { transform: rotate(-5deg); } 100% { transform: none; } }
+  .nf-oh, .nf-msg { margin: 0; font-size: clamp(19px, 1.6vw, 23px); line-height: 1.75; color: var(--muted-soft); }
+  html[data-theme="dark"] .nf-oh, html[data-theme="dark"] .nf-msg { color: #8F8F8F; }
+  .nf-msg a {
+    color: var(--text); text-decoration: none; font-weight: 500;
+        -webkit-background-clip: text; background-clip: text; transition: color .25s ease;
+  }
+  html[data-theme="light"] .nf-msg a { background-image: linear-gradient(180deg, #3F8250 0%, #3F8250 22%, #C29A12 52%, #C29A12 100%); }
+  html[data-theme="dark"] .nf-msg a { background-image: linear-gradient(180deg, #589E64 0%, #589E64 20%, #FFF7B7 50%, #FFF7B7 100%); }
+  .nf-msg a:hover, .nf-msg a:focus-visible { color: transparent; }
+  .nf-msg .ft-milk { width: 17px; height: 24px; vertical-align: -5px; margin-left: 8px; }
+  /* gentle entrance */
+  .nf > * { animation: nfUp .7s cubic-bezier(.2,.8,.2,1) both; }
+  .nf > :nth-child(2) { animation-delay: .08s; }
+  .nf > :nth-child(3) { animation-delay: .16s; }
+  @keyframes nfUp { from { opacity: 0; transform: translateY(12px); } }
+  @media (prefers-reduced-motion: reduce) { .nf > *, .nf-code span { animation: none !important; } }
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="sig-logo" id="navSigLink" aria-label="Justin Park, home">
+      <seal-logo id="navLogo" loop="false" aria-hidden="true"></seal-logo>
+    </a>
+  </div>
+</header>
+
+<main class="nf">
+  <h1 class="nf-code" aria-label="404"><span>4</span><span>0</span><span>4</span></h1>
+  <p class="nf-oh">Oh no!</p>
+  <p class="nf-msg">Please <a href="mailto:parkjustin2006@gmail.com?subject=Broken%20link%20on%20your%20site" id="nfMail">email me</a> if there was an error!<img class="ft-milk" src="assets/banana-milk.png" alt="" width="17" height="24"></p>
+</main>
+
+<script>
+  (function () {
+    // seal logo redraws on hover / focus, like the rest of the site
+    var link = document.getElementById('navSigLink'), logo = document.getElementById('navLogo');
+    var replay = function () { if (logo && logo.play) logo.play(); };
+    link.addEventListener('mouseenter', replay);
+    link.addEventListener('focus', replay);
+    // banana milk: one full shake per hover (on the bottle or the "email me" link)
+    var milk = document.querySelector('.nf-msg .ft-milk'), mail = document.getElementById('nfMail');
+    var shake = function () { if (!milk.classList.contains('shake')) milk.classList.add('shake'); };
+    milk.addEventListener('mouseenter', shake);
+    mail.addEventListener('mouseenter', shake);
+    mail.addEventListener('focus', shake);
+    milk.addEventListener('animationend', function () { milk.classList.remove('shake'); });
+  })();
+</script>
+</body>
+</html>
