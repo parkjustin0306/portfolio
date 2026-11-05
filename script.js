@@ -83,7 +83,7 @@
         ],
         overview: 'Inspired by my EZ-Reader Chrome extension, a close friend with colorblindness created Colorblind Helper. Collaborated as a freelance web designer to build its marketing site, supporting growth to 900+ users and 5-star rating on Chrome Web Store.',
         tools: ['VS Code', 'Cursor', 'Canva', 'Photoshop'],
-        links: [{ label: 'View Site', href: 'https://colorblindhelperr-bit.github.io/colorblind-helper/' }]
+        links: [{ label: 'View Site', href: 'https://colorblindhelp.github.io/site/' }]
       } }
   ];
   /* hue: colour of the card's cover (0–360 on the colour wheel). featured: true puts that card first.
