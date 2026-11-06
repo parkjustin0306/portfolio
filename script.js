@@ -162,7 +162,7 @@
     { src: 'assets/freespirit.jpg', title: 'Free Spirit', artist: 'Drake, Rick Ross' },
     { src: 'assets/weekend.jpeg', title: 'Weekend', artist: 'Mac Miller, Miguel' },
     { src: 'assets/secondhand.jpeg', title: 'Secondhand', artist: 'Don Toliver, Rema' },
-    { src: 'assets/secondhand.jpeg', title: 'Rendezvous', artist: 'Don Toliver, Yeat' },
+    { src: 'https://cdn-images.dzcdn.net/images/cover/361e67372634f2938a2c0f5c12995fcc/500x500-000000-80-0-0.jpg', title: 'Dølla Chemical RØMANCE', artist: 'Pz, Tezzus, Southsidesilhouette', deezer: 3763509032 },
     { src: 'assets/yes.jpeg', title: 'yes', artist: 'Ken Carson' },
     { src: 'assets/fashionkilla.png', title: 'My Whole Heart', artist: 'Nine Vicious', deezer: 3919123411 },
     { src: 'assets/tokyo.jpeg', title: 'Tokyo', artist: 'Nine Vicious' },
